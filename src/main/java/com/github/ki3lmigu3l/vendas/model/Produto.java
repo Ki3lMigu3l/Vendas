@@ -1,7 +1,6 @@
 package com.github.ki3lmigu3l.vendas.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.util.UUID;
@@ -10,6 +9,8 @@ import java.util.UUID;
 @Table(name = "Produtos")
 public class Produto {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String nome;
     private String descricao;
