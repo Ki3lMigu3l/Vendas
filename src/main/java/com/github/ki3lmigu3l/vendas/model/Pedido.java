@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -20,6 +21,8 @@ public class Pedido {
     @Column
     private BigDecimal totalPedido;
 
+    @OneToMany(mappedBy = "pedido")
+    private List<ItemPedido> itens;
     public Pedido() {
     }
 
@@ -28,6 +31,14 @@ public class Pedido {
         this.cliente = cliente;
         this.dataPedido = dataPedido;
         this.totalPedido = totalPedido;
+    }
+
+    public List<ItemPedido> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<ItemPedido> itens) {
+        this.itens = itens;
     }
 
     public UUID getId() {
