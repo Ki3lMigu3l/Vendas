@@ -1,5 +1,6 @@
 package com.github.ki3lmigu3l.vendas.model;
 
+import com.github.ki3lmigu3l.vendas.dto.ClienteRecordDTO;
 import jakarta.persistence.*;
 
 import java.util.UUID;
@@ -16,6 +17,9 @@ public class Cliente {
     private String nome;
 
     public Cliente() {}
+
+    public Cliente(ClienteRecordDTO dados) {
+    }
 
     public UUID getId() {
         return id;
